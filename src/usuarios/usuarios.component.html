@@ -5,10 +5,21 @@
         <div class="row">
         </div>
         <div class="row">
-          <div class="input-field col s12">
-  
-            <input class="validate" id="nome"  type="text" name="nome " [(ngModel)]="usuario.nome">
+          <div class="input-field col s4">
+            <input type="text" class="validate" id="nome" name="nome " [(ngModel)]="usuario.nome">
             <label for="nome" data-error="wrong" data-success="right">Nome</label>
+          </div>
+          <div class="input-field col s3">
+            <input type="text" class="validate" id="genero" name="genero " [(ngModel)]="usuario.genero">
+            <label for="genero" data-error="wrong" data-success="right">Genero</label>
+          </div>
+          <div class="input-field col s3">
+            <input type="text" class="validate" id="nasc" name="nasc " [(ngModel)]="usuario.nasc">
+            <label for="nasc" data-error="wrong" data-success="right">Nascimento</label>
+          </div>
+          <div class="input-field col s1">
+          <input type="text" class="validate" id="idade" name="idade " [(ngModel)]="usuario.idade">
+            <label for="idade" data-error="wrong" data-success="right">Idade</label>
           </div>
         </div>             
         <div class="row">
@@ -26,13 +37,37 @@
                     <th>
                         Nome
                     </th>
+                    <th>
+                      Genero
+                    </th>
+                    <th>
+                      Data de Nascimento
+                    </th>
+                    <th>
+                        Idade
+                    </th>
+                    <th>
+                      Apagar
+                    </th>
                 </thead>
                 <tbody *ngIf="usuarios" ngClass="table-black">
                     <tr *ngFor="let usuario of usuarios">
-                        <td>
-                            <div>{{ usuario.nome }}</div>
-                        </td>
-                    </tr>
+                      <td>
+                        <div>{{ usuario.nome }}</div>
+                    </td>
+                    <td>
+                      <div>{{ usuario.genero }}</div>
+                    </td>
+                    <td>
+                      <div>{{ usuario.nasc }}</div>
+                    </td>
+                    <td>
+                      <div>{{ usuario.idade }}</div>
+                    </td>
+                    <td>
+                      <div class="button">usuario.apagar</div>
+                    </td>
+                  </tr>
                 </tbody>
             </table>
         </div>

@@ -14,6 +14,10 @@ export class UsuarioService {
         return this.http.post(environment.apiUrl + '/usuario', usuario);
     }
 
+    delete(usuario: Usuario) {
+        return this.http.delete(environment.apiUrl + '/usuario');
+    }
+
 
     list() {
         return this.http.get<any>(environment.apiUrl + '/usuario');

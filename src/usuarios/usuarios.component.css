@@ -1,0 +1,14 @@
+.button{
+    background-color: transparent;
+    border-color: transparent;
+}
+.button:hover{
+    color: #F00;
+}
+.button:active{
+    motion-rotation: 90deg;
+    transition: .5s;
+}
+th {
+    color: #000;
+}
