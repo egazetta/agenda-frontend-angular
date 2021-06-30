@@ -35,8 +35,8 @@ export class UsuariosComponent implements OnInit {
           });
     }
     // funcao apagar a ser verificada
-    apagar(){
-      this.usuarioService.delete(this.usuario).subscribe(
+    apagar(usuario: Usuario){
+      this.usuarioService.delete(usuario).subscribe(
           data => {
             this.listarUsuarios();
             this.usuario = new Usuario();

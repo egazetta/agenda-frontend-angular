@@ -15,7 +15,7 @@ export class UsuarioService {
     }
 
     delete(usuario: Usuario) {
-        return this.http.delete(environment.apiUrl + '/usuario');
+        return this.http.delete(environment.apiUrl + '/usuario/'+ usuario._id);
     }
 
 
