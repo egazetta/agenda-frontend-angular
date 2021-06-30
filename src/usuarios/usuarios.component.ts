@@ -4,7 +4,8 @@ import { UsuarioService } from "../_services";
 import { Usuario } from '../_models';
 @Component({
     selector: 'app-usuario',
-    templateUrl: 'usuarios.component.html'
+    templateUrl: 'usuarios.component.html',
+    styleUrls: ['./usuarios.component.css']
 
 })
 export class UsuariosComponent implements OnInit {
@@ -33,8 +34,19 @@ export class UsuariosComponent implements OnInit {
               console.log(error);
           });
     }
+    // funcao apagar a ser verificada
+    apagar(){
+      this.usuarioService.delete(this.usuario).subscribe(
+          data => {
+            this.listarUsuarios();
+            this.usuario = new Usuario();
+          },
+          error => {
+            console.log(error);
+        });
+  }
 
-    listarUsuarios(){
+  listarUsuarios(){
         this.usuarioService.list().subscribe(
           data => {
             this.usuarios = data
